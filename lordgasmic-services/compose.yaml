@@ -9,8 +9,8 @@ services:
     volumes:
       - /var/docker-services/logs/bff:/app/logs
     environment:
-      PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
-      REDIS_PASSWORD: "[[REDIS_PASSWORD]]"
+      PRINT_SERVICE_PASSWORD: ${PRINT_SERVICE_PASSWORD}
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
 
   login-service:
     container_name: login-service
@@ -53,8 +53,8 @@ services:
     volumes:
       - /var/docker-services/logs/grocery-service:/app/logs
     environment:
-      PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
-      GROCERY_USER_PASSWORD: "[[GROCERY_USER_PASSWORD]]"
+      PRINT_SERVICE_PASSWORD: ${PRINT_SERVICE_PASSWORD}
+      GROCERY_USER_PASSWORD: ${GROCERY_USER_PASSWORD}
 
   order-service:
     container_name: order-service
@@ -66,8 +66,8 @@ services:
     volumes:
       - /var/docker-services/logs/order-service:/app/logs
     environment:
-      PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
-      ORDER_USER_PASSWORD: "[[ORDER_USER_PASSWORD]]"
+      PRINT_SERVICE_PASSWORD: ${PRINT_SERVICE_PASSWORD}
+      ORDER_USER_PASSWORD: ${ORDER_USER_PASSWORD}
 
   print-service:
     container_name: print-service
@@ -79,7 +79,7 @@ services:
     volumes:
       - /var/docker-services/logs/print-service:/app/logs
     environment:
-      PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
+      PRINT_SERVICE_PASSWORD: ${PRINT_SERVICE_PASSWORD}
 
   meme-service:
     container_name: meme-service
