@@ -1,0 +1,16 @@
+services:
+  bff:
+    container_name: bff
+    image: lordgasmic/bff:latest
+    ports:
+      - 48080:48080
+    networks:
+      - web-service
+    volumes:
+      - /var/docker-services/logs/bff:/app/logs
+    environment:
+      PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
+      REDIS_PASSWORD: "[[REDIS_PASSWORD]]"
+
+networks:
+  web-service:
