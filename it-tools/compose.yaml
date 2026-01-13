@@ -1,5 +1,5 @@
 services:
-  myspeed:
+  it-tools:
     image: corentinth/it-tools:latest
  #   ports:
   #    - 5216:5216
