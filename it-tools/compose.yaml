@@ -1,1 +1,5 @@
-asdf
+services:
+  myspeed:
+    image: corentinth/it-tools:latest
+ #   ports:
+  #    - 5216:5216
