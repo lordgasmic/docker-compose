@@ -32,7 +32,7 @@ services:
     volumes:
       - /var/www/images:/images
       - /var/docker-services/logs/collection-service:/app/logs
-      -
+
   funko-service:
     container_name: funko-service
     image: lordgasmic/funko-service:latest
