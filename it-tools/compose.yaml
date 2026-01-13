@@ -1,5 +1,5 @@
 services:
   it-tools:
     image: corentinth/it-tools:latest
- #   ports:
-  #    - 5216:5216
+    ports:
+      - 80:80
