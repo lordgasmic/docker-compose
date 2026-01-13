@@ -3,7 +3,7 @@ services:
     container_name: bff
     image: lordgasmic/bff:latest
     ports:
-      - 48080:48080
+      - "48080:48080"
     networks:
       - web-service
     volumes:
@@ -11,6 +11,107 @@ services:
     environment:
       PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
       REDIS_PASSWORD: "[[REDIS_PASSWORD]]"
+
+  login-service:
+    container_name: login-service
+    image: lordgasmic/login-service:latest
+    ports:
+      - "48081:48081"
+    networks:
+      - web-service
+    volumes:
+      - /var/docker-services/logs/login-service:/app/logs
+
+  collection-service:
+    container_name: collection-service
+    image: lordgasmic/collection-service:latest
+    ports:
+      - "48086:48086"
+    networks:
+      - web-service
+    volumes:
+      - /var/www/images:/images
+      - /var/docker-services/logs/collection-service:/app/logs
+      -
+  funko-service:
+    container_name: funko-service
+    image: lordgasmic/funko-service:latest
+    ports:
+      - "48089:48089"
+    networks:
+      - web-service
+    volumes:
+      - /var/docker-services/logs/funko-service:/app/logs
+
+  grocery-service:
+    container_name: grocery-service
+    image: lordgasmic/grocery-service:latest
+    ports:
+      - "48092:48092"
+    networks:
+      - web-service
+    volumes:
+      - /var/docker-services/logs/grocery-service:/app/logs
+    environment:
+      PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
+      GROCERY_USER_PASSWORD: "[[GROCERY_USER_PASSWORD]]"
+
+  order-service:
+    container_name: order-service
+    image: lordgasmic/order-service:latest
+    ports:
+      - "48093:48093"
+    networks:
+      - web-service
+    volumes:
+      - /var/docker-services/logs/order-service:/app/logs
+    environment:
+      PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
+      ORDER_USER_PASSWORD: "[[ORDER_USER_PASSWORD]]"
+
+  print-service:
+    container_name: print-service
+    image: lordgasmic/print-service:latest
+    ports:
+      - "48090:48090"
+    networks:
+      - web-service
+    volumes:
+      - /var/docker-services/logs/print-service:/app/logs
+    environment:
+      PRINT_SERVICE_PASSWORD: "[[PRINT_SERVICE_PASSWORD]]"
+
+  meme-service:
+    container_name: meme-service
+    image: lordgasmic/meme-service:latest
+    ports:
+      - "48085:48085"
+    networks:
+      - web-service
+    volumes:
+      - /var/docker-services/logs/meme-service:/app/logs
+      - /var/www/images:/vol
+
+  wine-service:
+    container_name: wine-service
+    image: lordgasmic/wine-service:latest
+    ports:
+      - "48088:48088"
+    networks:
+      - web-service
+    volumes:
+      - /var/www/images:/images
+      - /var/docker-services/logs/wine-service:/app/logs
+
+  webapp:
+    container_name: webapp
+    image: lordgasmic/webapp:latest
+    ports:
+      - "4200:4200"
+    networks:
+      - web-service
+    volumes:
+      - /var/docker-services/logs/webapp:/app/logs
 
 networks:
   web-service:
