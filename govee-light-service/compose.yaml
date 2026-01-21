@@ -3,4 +3,4 @@ services:
     image: lordgasmic/govee-light-service:latest
     ports:
       - 27015:27015
-      - 4002:4002
+      - 4002:4002/udp
