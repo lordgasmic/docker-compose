@@ -1,0 +1,5 @@
+services:
+  myspeed:
+    image: lordgasmic/govee-light-service:latest
+    ports:
+      - 27015:27015
