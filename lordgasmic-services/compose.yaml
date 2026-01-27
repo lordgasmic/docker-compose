@@ -43,7 +43,7 @@ services:
     volumes:
       - /var/docker-services/logs/funko-service:/app/logs
     environment:
-      WEB_SERVICE_PASSWORD: ${WEB_SERVICE_PASSWORD}
+      WEB_USER_PASSWORD: ${WEB_USER_PASSWORD}
 
   grocery-service:
     container_name: grocery-service
