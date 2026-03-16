@@ -1,6 +1,7 @@
 services:
   govee-light-service:
     image: lordgasmic/govee-light-service:latest
+    restart: unless-stopped
     ports:
       - 27015:27015
       - 4002:4002/udp

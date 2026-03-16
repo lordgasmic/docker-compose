@@ -2,6 +2,7 @@ services:
   bff:
     container_name: bff
     image: lordgasmic/bff:latest
+    restart: unless-stopped
     ports:
       - "48080:48080"
     networks:
@@ -15,6 +16,7 @@ services:
   login-service:
     container_name: login-service
     image: lordgasmic/login-service:latest
+    restart: unless-stopped
     ports:
       - "48081:48081"
     networks:
@@ -25,6 +27,7 @@ services:
   collection-service:
     container_name: collection-service
     image: lordgasmic/collection-service:latest
+    restart: unless-stopped
     ports:
       - "48086:48086"
     networks:
@@ -36,6 +39,7 @@ services:
   funko-service:
     container_name: funko-service
     image: lordgasmic/funko-service:latest
+    restart: unless-stopped
     ports:
       - "48089:48089"
     networks:
@@ -48,6 +52,7 @@ services:
   grocery-service:
     container_name: grocery-service
     image: lordgasmic/grocery-service:latest
+    restart: unless-stopped
     ports:
       - "48092:48092"
     networks:
@@ -61,6 +66,7 @@ services:
   order-service:
     container_name: order-service
     image: lordgasmic/order-service:latest
+    restart: unless-stopped
     ports:
       - "48093:48093"
     networks:
@@ -74,6 +80,7 @@ services:
   print-service:
     container_name: print-service
     image: lordgasmic/print-service:latest
+    restart: unless-stopped
     ports:
       - "48090:48090"
     networks:
@@ -86,6 +93,7 @@ services:
   meme-service:
     container_name: meme-service
     image: lordgasmic/meme-service:latest
+    restart: unless-stopped
     ports:
       - "48085:48085"
     networks:
@@ -97,6 +105,7 @@ services:
   wine-service:
     container_name: wine-service
     image: lordgasmic/wine-service:latest
+    restart: unless-stopped
     ports:
       - "48088:48088"
     networks:
@@ -108,6 +117,7 @@ services:
   webapp:
     container_name: webapp
     image: lordgasmic/webapp:latest
+    restart: unless-stopped
     ports:
       - "4200:4200"
     networks:
