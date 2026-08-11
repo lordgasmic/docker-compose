@@ -8,3 +8,5 @@ services:
       - WEBSOCKET_ENABLED=true # Enables push notifications/instant syncing
     volumes:
       - ./vw-data:/data
+    ports:
+      - "8091:80"
