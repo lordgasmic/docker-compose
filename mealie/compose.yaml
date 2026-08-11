@@ -1,0 +1,26 @@
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:latest #
+    container_name: mealie
+    restart: always
+    ports:
+      - "9925:9000"
+    volumes:
+      - mealie-data:/app/data/
+    environment:
+      # Set Backend ENV Variables Here
+      ALLOW_SIGNUP: "false"
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Detroit
+      BASE_URL: https://mealie.lordgasmic.com
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: 587
+      SMTP_FROM_NAME: Mealie
+      SMTP_AUTH_STRATEGY: TLS
+      SMTP_FROM_EMAIL: mealie@lordgasmic.com
+      SMTP_USER: lordgasmic@gmail.com
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
+
+volumes:
+  mealie-data:
