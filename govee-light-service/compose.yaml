@@ -1,6 +1,7 @@
 services:
   govee-light-service:
     image: lordgasmic/govee-light-service:latest
+    container_name: govee-light-service
     restart: unless-stopped
     ports:
       - 27015:27015
