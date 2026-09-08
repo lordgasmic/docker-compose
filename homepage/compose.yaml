@@ -8,4 +8,4 @@ services:
     volumes:
       - "./config:/app/config"
     environment:
-      - HOMEPAGE_ALLOWED_HOSTS=localhost:3000,127.0.0.1:3000,172.16.0.116:3000,homepage.internal.lordgasmic.com
+      - HOMEPAGE_ALLOWED_HOSTS=localhost:3000,127.0.0.1:3000,172.16.0.136:3000,homepage.internal.lordgasmic.com
