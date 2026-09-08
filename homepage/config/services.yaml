@@ -16,15 +16,15 @@
           type: proxmox
           url: https://172.16.0.10:8006
           username: api-homepage@pam!homepage
-          password: ${HOMEPAGE_PROXMOX_PAM}
+          password: {{HOMEPAGE_PROXMOX_PAM}}
     - OPNSense:
         href: https://172.16.0.1:8443
         icon: opnsense.png
         widget:
           type: opnsense
           url: https://172.16.0.1:8443
-          username: ${OPNSENSE_USERNAME}
-          password: ${OPNSENSE_PASSWORD}
+          username: {{OPNSENSE_USERNAME}}
+          password: {{OPNSENSE_PASSWORD}}
     - Aruba IAP 205:
         href: https://172.16.0.2:4343
         icon: sh-hpe-aruba.png
@@ -46,15 +46,15 @@
           alerts: dashboards
           url: http://172.16.0.126:3000
           username: admin
-          password: ${GRAFANA_KEY}
+          password: {{GRAFANA_KEY}}
     - Komodo:
         href: https://komodo.lordgasmic.com
         icon: komodo.svg
         widget:
           type: komodo
           url: https://komodo.lordgasmic.com
-          key: ${HOMEPAGE_KOMODO_KEY}
-          secret: ${HOMEPAGE_KOMODO_SECRET}
+          key: {{HOMEPAGE_KOMODO_KEY}}
+          secret: {{HOMEPAGE_KOMODO_SECRET}}
           showSummary: true
     - Portainer:
         href: https://172.16.0.115:9443
@@ -114,14 +114,14 @@
         widget:
           type: sonarr
           url: http://172.16.0.16:8989
-          key: ${SONARR_KEY}
+          key: {{SONARR_KEY}}
     - Radarr:
         href: http://172.16.0.16:7878/
         icon: radarr.png
         widget:
           type: radarr
           url: http://172.16.0.16:7878
-          key: ${RADARR_KEY}
+          key: {{RADARR_KEY}}
     - Whisparr:
         href: http://172.16.0.16:6969/
         icon: whisparr.png
@@ -132,18 +132,18 @@
         widget:
           type: prowlarr
           url: http://172.16.0.16:9696
-          key: ${PROWLARR_KEY}
+          key: {{PROWLARR_KEY}}
     - Overseerr:
         href: https://overseerr.internal.lordgasmic.com
         icon: overseerr.png
         widget:
           type: overseerr
           url: http://172.16.0.117:5055
-          key: ${OVERSEERR_KEY}
+          key: {{OVERSEERR_KEY}}
     - Deluge:
         href: http://172.16.0.16:8112/
         icon: deluge.png
         widget:
           type: deluge
           url: http://172.16.0.16:8112
-          password: ${DELUGE_PASSWORD}
+          password: {{DELUGE_PASSWORD}}
