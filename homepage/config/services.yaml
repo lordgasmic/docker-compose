@@ -1,0 +1,149 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Infrastructure:
+    - lordgasmic.com:
+        href: https://lordgasmic.com
+        siteMonitor: https://lordgasmic.com
+    - iDRAC:
+        href: http://172.16.0.12
+        icon: dell.png
+    - Proxmox PVE:
+        href: https://172.16.0.10:8006/
+        icon: proxmox.png
+        widget:
+          type: proxmox
+          url: https://172.16.0.10:8006
+          username: api-homepage@pam!homepage
+          password: ${HOMEPAGE_PROXMOX_PAM}
+    - OPNSense:
+        href: https://172.16.0.1:8443
+        icon: opnsense.png
+        widget:
+          type: opnsense
+          url: https://172.16.0.1:8443
+          username: ${OPNSENSE_USERNAME}
+          password: ${OPNSENSE_PASSWORD}
+    - Aruba IAP 205:
+        href: https://172.16.0.2:4343
+        icon: sh-hpe-aruba.png
+    - Aruba IAP 214:
+        href: https://172.16.0.3:4343
+        icon: sh-hpe-aruba.png
+    - NUT:
+        href: http://172.16.0.107/cgi-bin/nut/upsstats.cgi
+        icon: nut
+    - Nginx Proxy Manager:
+        href: http://172.16.0.100
+        icon: nginx-proxy-manager.png
+    - Grafana:
+        href: http://172.16.0.126:3000
+        icon: grafana.svg
+        widget:
+          type: grafana
+          version: 2
+          alerts: dashboards
+          url: http://172.16.0.126:3000
+          username: admin
+          password: ${GRAFANA_KEY}
+    - Komodo:
+        href: https://komodo.lordgasmic.com
+        icon: komodo.svg
+        widget:
+          type: komodo
+          url: https://komodo.lordgasmic.com
+          key: ${HOMEPAGE_KOMODO_KEY}
+          secret: ${HOMEPAGE_KOMODO_SECRET}
+          showSummary: true
+    - Portainer:
+        href: https://172.16.0.115:9443
+        icon: portainer.png
+    - RabbitMQ:
+        href: http://172.16.0.104:15672
+        icon: rabbitmq.png
+        siteMonitor: http://172.16.0.104:15672
+    - Home Assistant:
+        href: http://172.16.0.113:8123
+        icon: home-assistant.png
+    - IT Tools:
+        href: http://172.16.0.111
+        icon: mdi-tools-#22b54a
+    - Vault Warden:
+        href: https://vaultwarden.lordgasmic.com
+        icon: vaultwarden.png
+    - Immich:
+        href: https://immich.lordgasmic.com
+        icon: immich.svg
+    - MySpeed:
+        href: http://172.16.0.112:5216
+        widget:
+          type: myspeed
+          url: http://172.16.0.112:5216
+
+- Docker:
+    - bff:
+        server: my-docker
+        container: bff
+        showStats: true
+    - login-service:
+        server: my-docker
+        container: login-service
+        showStats: true
+    - meme-service:
+        server: my-docker
+        container: meme-service
+        showStats: true
+    - collection-service:
+        server: my-docker
+        container: collection-service
+        showStats: true
+    - wine-service:
+        server: my-docker
+        container: wine-service
+        showStats: true
+    - funko-service:
+        server: my-docker
+        container: funko-service
+        showStats: true
+
+- Arr:
+    - Sonarr:
+        href: http://172.16.0.16:8989/
+        icon: sonarr.png
+        widget:
+          type: sonarr
+          url: http://172.16.0.16:8989
+          key: ${SONARR_KEY}
+    - Radarr:
+        href: http://172.16.0.16:7878/
+        icon: radarr.png
+        widget:
+          type: radarr
+          url: http://172.16.0.16:7878
+          key: ${RADARR_KEY}
+    - Whisparr:
+        href: http://172.16.0.16:6969/
+        icon: whisparr.png
+        siteMonitor: http://172.16.0.16:6969
+    - Prowlarr:
+        href: http://172.16.0.16:9696/
+        icon: prowlarr.png
+        widget:
+          type: prowlarr
+          url: http://172.16.0.16:9696
+          key: ${PROWLARR_KEY}
+    - Overseerr:
+        href: https://overseerr.internal.lordgasmic.com
+        icon: overseerr.png
+        widget:
+          type: overseerr
+          url: http://172.16.0.117:5055
+          key: ${OVERSEERR_KEY}
+    - Deluge:
+        href: http://172.16.0.16:8112/
+        icon: deluge.png
+        widget:
+          type: deluge
+          url: http://172.16.0.16:8112
+          password: ${DELUGE_PASSWORD}
