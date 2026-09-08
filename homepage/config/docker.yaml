@@ -3,5 +3,5 @@
 # https://gethomepage.dev/latest/configs/docker/
 
 my-docker:
-  host: 172.16.0.110
+  host: 172.16.0.135
   port: 2375
