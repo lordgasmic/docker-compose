@@ -76,10 +76,10 @@
         href: https://immich.lordgasmic.com
         icon: immich.svg
     - MySpeed:
-        href: http://172.16.0.112:5216
+        href: http://172.16.0.136:5216
         widget:
           type: myspeed
-          url: http://172.16.0.112:5216
+          url: http://172.16.0.136:5216
 
 - Docker:
     - bff:
