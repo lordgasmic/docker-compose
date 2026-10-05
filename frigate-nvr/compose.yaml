@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  frigate:
+    container_name: frigate
+    privileged: false # Keep it secure
+    restart: unless-stopped
+    image: ghcr.io/blakeblackshear/frigate:stable
+    shm_size: "512mb" # 512MB is plenty for 1-2 high-res cameras
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /opt/frigate/config:/config
+      - /opt/frigate/storage:/media/frigate
+    devices:
+      - /dev/dri:/dev/dri # This single line passes your Intel graphics directly to Frigate
+    ports:
+      - "5000:5000"
+      - "8554:8554" # RTSP feeds
+      - "8555:8555" # WebRTC
+    environment:
+      TZ: "America/Detroit"
